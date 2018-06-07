@@ -1,4 +1,4 @@
-package com.gfg.array;
+package Arrays;
 
 import java.util.Hashtable;
 import java.util.Scanner;
