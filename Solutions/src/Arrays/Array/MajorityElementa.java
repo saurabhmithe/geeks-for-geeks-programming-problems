@@ -7,7 +7,7 @@ import java.util.*;
  * otherwise prints “No Majority Element”. A majority element in an array A[] of size n
  * is an element that appears more than n/2 times (and hence there is at most one such element).
  */
-public class MajorityElement {
+public class MajorityElementa {
     public static void main(String[] args) {
         int[] array = {3, 3, 4, 2, 4, 4, 2, 4, 4};
         int length = array.length;
