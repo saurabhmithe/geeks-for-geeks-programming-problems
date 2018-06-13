@@ -2,12 +2,11 @@ package dynamic_programming;
 
 public class MaximumSumIncreasingSubsequence {
 
-    public static void main(String[] args) {
-        int[] a = {1, 101, 2, 3, 100, 4, 5};
-        MaximumSumIncreasingSubsequence increasingSubsequence = new MaximumSumIncreasingSubsequence();
-        int maxSum = increasingSubsequence.maxSum(a, a.length);
-        System.out.println(maxSum);
-    }
+    // Given an array of n positive integers. Write a program to find the sum of maximum sum
+    // subsequence of the given array such that the intgers in the subsequence are sorted in
+    // increasing order. For example, if input is {1, 101, 2, 3, 100, 4, 5}, then output should
+    // be 106 (1 + 2 + 3 + 100), if the input array is {3, 4, 5, 10}, then output should be
+    // 22 (3 + 4 + 5 + 10) and if the input array is {10, 5, 4, 3}, then output should be 10
 
     public int maxSum(int[] a, int n) {
         // This is where we would store the maximum sum to be returned.
@@ -36,6 +35,6 @@ public class MaximumSumIncreasingSubsequence {
             if (max < msis[i]) max = msis[i];
         }
         return max;
-
     }
+
 }
