@@ -21,27 +21,38 @@ public class LongestIncreasingSubsequence {
     /**
      * Time Complexity - O(n^2)
      * Space Complexity - O(n)
-     * <p>
-     * Runtime on LeetCode - 62ms
-     * Runtime beats 6.90% of Java submissions
      */
-    public int LISNaive(int[] a) {
+    public int LIS(int[] a) {
+        // Create the maximum sub-sequence sum array
         int[] arr = new int[a.length];
+
         for (int i = 0; i < arr.length; i++) {
+            // Setting individual sum for each element which is base case
             arr[i] = 1;
+
         }
+
         for (int i = 1; i < a.length; i++) {
-            for (int j = 1; j < i; j++) {
+            for (int j = 0; j < i; j++) {
                 if (a[i] > a[j]) {
+                    // Adding sum of previous smaller element with 1 and assigning to sum of current element
                     if (arr[i] < arr[j] + 1) arr[i] = arr[j] + 1;
                 }
             }
         }
+
         int max = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (max < arr[i]) max = arr[i];
+            if (arr[i] > max) max = arr[i];
         }
         return max;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {10, 22, 9, 33, 21, 50, 41, 60, 80};
+        LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
+        int max = lis.LIS(a);
+        System.out.println(max);
     }
 
 }
