@@ -49,13 +49,9 @@ public class LongestCommonSubsequence {
         int[][] mem = new int[m + 1][n + 1];
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
-                if (i == 0 || j == 0) {
-                    mem[i][j] = 0;
-                } else if (X[i - 1] == Y[j - 1]) {
-                    mem[i][j] = 1 + mem[i - 1][j - 1];
-                } else {
-                    mem[i][j] = Math.max(mem[i - 1][j], mem[i][j - 1]);
-                }
+                if (i == 0 || j == 0) mem[i][j] = 0;
+                else if (X[i - 1] == Y[j - 1]) mem[i][j] = 1 + mem[i - 1][j - 1];
+                else mem[i][j] = max(mem[i - 1][j], mem[i][j - 1]);
             }
         }
         return mem[m][n];
@@ -64,6 +60,14 @@ public class LongestCommonSubsequence {
     /* Utility function to get max of 2 integers */
     static int max(int a, int b) {
         return (a > b) ? a : b;
+    }
+
+    public static void main(String[] args) {
+        String a = "ABCDGH";
+        String b = "AEDFHR";
+        LongestCommonSubsequence commonSubsequence = new LongestCommonSubsequence();
+        int longest = commonSubsequence.lcs(a.toCharArray(), b.toCharArray(), a.length(), b.length());
+        System.out.println(longest);
     }
 
 }
