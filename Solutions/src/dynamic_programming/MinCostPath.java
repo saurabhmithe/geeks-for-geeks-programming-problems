@@ -41,4 +41,11 @@ public class MinCostPath {
     public static int min(int x, int y, int z) {
         return x < y ? x < z ? x : z : y < z ? y : z;
     }
+
+    public static void main(String[] args) {
+        int[][] a = {{1, 2, 3}, {4, 8, 2}, {1, 5, 3}};
+        MinCostPath minCostPath = new MinCostPath();
+        int cost = minCostPath.minCost(a, a.length - 1, a[0].length - 1);
+        System.out.println(cost);
+    }
 }
