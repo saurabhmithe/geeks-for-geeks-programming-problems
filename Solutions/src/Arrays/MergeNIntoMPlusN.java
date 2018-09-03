@@ -1,4 +1,4 @@
-package Arrays.Array;
+package Arrays;
 
 public class MergeNIntoMPlusN {
     public static void main(String[] args) {
@@ -12,6 +12,16 @@ public class MergeNIntoMPlusN {
 
     }
 
+    /**
+     * First we shift all the blank spaces in the larger array to the end.
+     * Then we maintain two pointers at the end of both arrays where the actual values end.
+     * And we also maintain an additional pointer to the far end of the larger array where we need to put the elements.
+     * Now we compare values at both the pointers and put the value that is larger at the end pointer.
+     * We continue this until the pointer in the smaller array reaches 0.
+     * <p>
+     * Time Complexity - O(n)
+     * Space Complexity - O(1)
+     */
     private static int[] linear(int[] m, int[] n) {
 
         int pointer = m.length - 1;
@@ -42,4 +52,5 @@ public class MergeNIntoMPlusN {
 
         return m;
     }
+
 }
